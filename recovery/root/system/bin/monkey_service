@@ -1,0 +1,10 @@
+#!/system/bin/sh
+i=10000;
+while [[ $i -gt 0 ]];do
+	echo "time " $i "start...";
+	dttm=`date +%H%M%S`;
+	monkey --ignore-timeouts --ignore-security-exceptions --pkg-blacklist-file /system/etc/monkey_black_list --throttle 500 -s $dttm -v -v -v 125000
+	((i--));
+	sleep 10;
+	echo "time " $i "finished";
+done;

@@ -1,0 +1,22 @@
+# sysinfod
+#on property:vold.post_fs_data_done=1 && property:persist.debug.logpersistd=clear
+#    exec u:r:shell:s0 shell shell -- /system/bin/sysinfod.sh /data/media/awlog/sysinfo
+#    setprop persist.debug.sysinfod false
+
+on property:persist.debug.sysinfod.enable=*
+    setprop debug.sysinfod.enable ${persist.debug.sysinfod.enable}
+
+on property:vold.post_fs_data_done=1 && property:persist.debug.logpersistd=true && property:debug.sysinfod.enable=true
+    mkdir /data/media/awlog/sysinfo 0770 media_rw media_rw
+    start awlog_sysinfod
+
+on property:vold.post_fs_data_done=1 && property:debug.sysinfod.enable=false
+    stop awlog_sysinfod
+
+service awlog_sysinfod /system/bin/sysinfod.sh /data/media/awlog/sysinfo
+    disabled
+    user root
+    group root
+    seclabel u:r:su:s0
+    writepid /dev/cpuset/system-background/tasks
+    oom_score_adjust -600

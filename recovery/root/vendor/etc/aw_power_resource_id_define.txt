@@ -1,0 +1,8 @@
+#id         #resource name
+0x00000001  cpu_governor
+0x00000002  dfs_governor
+0x00000003  tp_idle
+0x00000004  io_schedule
+0x00000005  thermal_control
+0x00000006  nsi_limit
+0x00000007  uclamp_limit

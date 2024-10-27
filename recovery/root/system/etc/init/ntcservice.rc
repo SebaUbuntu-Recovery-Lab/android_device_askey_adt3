@@ -1,0 +1,7 @@
+# start ntc service
+service ntc /system/bin/ntcservice
+    class main
+    user root
+    seclabel u:r:ntcservice:s0
+    #group root audio camera graphics inet net_bt net_bt_admin net_raw
+    #ioprio rt 4

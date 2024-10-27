@@ -1,0 +1,9 @@
+on boot
+    #inmod tp module
+    insmod /vendor/lib/modules/init-input.ko
+    insmod /vendor/lib/modules/sunxi-direct-gpio.ko
+    insmod /vendor/lib/modules/ir-rc5-decoder.ko
+    insmod /vendor/lib/modules/ir-nec-decoder.ko
+    insmod /vendor/lib/modules/sunxi-ir-rx.ko
+    #gpio led
+    insmod /vendor/lib/modules/sunxi-gpio-ir-recv.ko

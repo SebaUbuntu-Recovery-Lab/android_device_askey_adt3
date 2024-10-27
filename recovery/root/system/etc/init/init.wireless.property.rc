@@ -1,0 +1,4 @@
+# Auto-generated
+# date: Wed Jul 31 17:34:04 CST 2024
+on init
+    setprop ro.bluetooth.ble_start_timeout_delay 8000

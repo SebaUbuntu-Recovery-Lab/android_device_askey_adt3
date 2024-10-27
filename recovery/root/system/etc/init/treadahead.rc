@@ -1,0 +1,27 @@
+service treadahead_process /system/bin/treadahead process /treadahead/readahead_file_offset
+    class core
+    priority -20
+    user root
+    group root system shell
+    disabled
+    oneshot
+    seclabel u:r:vendor_init:s0
+
+
+service treadahead_trace /system/bin/treadahead trace /treadahead/readahead_file_offset
+    class core
+    user root
+    group root system shell
+    disabled
+    oneshot
+    seclabel u:r:vendor_init:s0
+
+# start readahead for performance
+#
+#on load_persist_props_action
+on post-fs-data
+    restorecon_recursive /treadahead
+    start treadahead_process
+
+on property:sys.boot_completed=1
+    start treadahead_trace

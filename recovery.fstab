@@ -1,18 +1,31 @@
-/system          erofs     system                                              flags=display=system;logical;slotselect;backup=1
-/system          ext4      system                                              flags=display=system;logical;slotselect;backup=1
-/system_dlkm     ext4      system_dlkm                                         flags=display=system_dlkm;logical;slotselect;backup=1
-/vendor          erofs     vendor                                              flags=display=vendor;logical;slotselect;backup=1
-/vendor_dlkm     erofs     vendor_dlkm                                         flags=display=vendor_dlkm;logical;slotselect;backup=1
-/product         erofs     product                                             flags=display=product;logical;slotselect;backup=1
-/data            f2fs      /dev/block/by-name/userdata                         flags=display=data;backup=1
-/metadata        ext4      /dev/block/by-name/metadata                         flags=display=metadata;backup=1
-/treadahead      ext4      /dev/block/by-name/treadahead                       flags=display=treadahead;backup=1
-/oem             vfat      /dev/block/by-name/media_data                       flags=display=oem;backup=1
-/boot            emmc      /dev/block/by-name/boot                             flags=display=boot;backup=1
-/misc            emmc      /dev/block/by-name/misc                             flags=display=misc;backup=1
-/super           emmc      /dev/block/by-name/super                            flags=display=super;backup=1
-/persistent      emmc      /dev/block/by-name/frp                              flags=display=persistent;backup=1
-auto             auto      /devices/platform/*/4020000.sdmmc/mmc_host/mmc*     flags=display=auto;backup=1
-auto             auto      /devices/platform/**/usb*                           flags=display=auto;backup=1
-/Reserve0        vfat      /dev/block/by-name/Reserve0                         flags=display=Reserve0;backup=1
-/sdcard          emmc      none                                                flags=display=sdcard;backup=1
+/system          erofs     system                                              flags=display=system;logical;slotselect;backup=1;flashimg=1
+/system          ext4      system                                              flags=display=system;logical;slotselect;backup=1;flashimg=1
+/system_dlkm     ext4      system_dlkm                                         flags=display=system_dlkm;logical;slotselect;backup=1;flashimg=1
+/vendor          erofs     vendor                                              flags=display=vendor;logical;slotselect;backup=1;flashimg=1
+/vendor_dlkm     erofs     vendor_dlkm                                         flags=display=vendor_dlkm;logical;slotselect;backup=1;flashimg=1
+/product         erofs     product                                             flags=display=product;logical;slotselect;backup=1;flashimg=1
+/data            f2fs      /dev/block/by-name/userdata                         flags=display=data;backup=1;flashimg=1
+/metadata        ext4      /dev/block/by-name/metadata                         flags=display=metadata;backup=1;flashimg=1
+/treadahead      ext4      /dev/block/by-name/treadahead                       flags=display=treadahead;backup=1;flashimg=1
+/oem             vfat      /dev/block/by-name/media_data                       flags=display=oem;backup=1;flashimg=1
+/boot            emmc      /dev/block/by-name/boot                             flags=display=boot;backup=1;flashimg=1
+/misc            emmc      /dev/block/by-name/misc                             flags=display=misc;backup=1;flashimg=1
+/super           emmc      /dev/block/by-name/super                            flags=display=super;backup=1;flashimg=1
+/persistent      emmc      /dev/block/by-name/frp                              flags=display=persistent;backup=1;flashimg=1
+auto             auto      /devices/platform/*/4020000.sdmmc/mmc_host/mmc*     flags=display=auto;backup=1;flashimg=1
+auto             auto      /devices/platform/**/usb*                           flags=display=auto;backup=1;flashimg=1
+/Reserve0        vfat      /dev/block/by-name/Reserve0                         flags=display=Reserve0;backup=1;flashimg=1
+/sdcard          emmc      none                                                flags=display=sdcard
+#SD cards
+/external_sd	vfat		/dev/block/mmcblk0p1	/dev/block/mmcblk0	flags=display="MicroSD Card 1";storage;wipeingui;removable
+/external_sd    vfat        /dev/block/mmcblk1p1	/dev/block/mmcblk1 	flags=display="MicroSD Card 2";storage;wipeingui;removable
+/external_sd	auto		/dev/block/mmcblk0p1	/dev/block/mmcblk0	flags=display="MicroSD Card 3";storage;wipeingui;removable
+/external_sd    auto        /dev/block/mmcblk1p1	/dev/block/mmcblk1 	flags=display="MicroSD Card 4";storage;wipeingui;removable
+
+#OTG
+/usb-otg	auto		/dev/block/sdf1	/dev/block/sdf		  flags=display="USB-OTG 1";backup=0
+/usb-otg    auto        /dev/block/sda1 /dev/block/sda        flags=display="USB OTG 2";backup=0
+/usb-otg    auto        /dev/block/sdg1 /dev/block/sdg        flags=display="USB-OTG 3";backup=0
+/usb_otg    auto        /dev/block/sdd1 /dev/block/sdd        flags=display="USB-OTG 5";backup=0
+
+# Online TWRP Builder By Team Hovatek
