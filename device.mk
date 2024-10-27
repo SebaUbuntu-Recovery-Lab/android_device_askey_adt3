@@ -16,7 +16,12 @@ AB_OTA_UPDATER := true
 ENABLE_VIRTUAL_AB := true
 TARGET_ENFORCE_AB_OTA_PARTITION_LIST := true
 AB_OTA_PARTITIONS += \
-
+    product \
+    vendor_dlkm \
+    system_dlkm \
+    vendor \
+    system
+BOARD_USES_RECOVERY_AS_BOOT := true
 
 PRODUCT_PACKAGES += \
     bootctrl.diana
