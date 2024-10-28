@@ -37,7 +37,7 @@ ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
 
 # Assertation
-TARGET_OTA_ASSERT_DEVICE := plato
+TARGET_OTA_ASSERT_DEVICE := adt3
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := exdroid
