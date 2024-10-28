@@ -1,4 +1,0 @@
-service qw /system/bin/qw --daemon
-    user root
-    group root
-    class core
