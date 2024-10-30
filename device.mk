@@ -23,12 +23,6 @@ PRODUCT_PACKAGES += \
     bootctrl.diana \
     bootctrl.diana.recovery
 
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.diana \
-    libgptutils \
-    libz \
-    libcutils
-
 PRODUCT_PACKAGES += \
     otapreopt_script \
     cppreopts.sh \
