@@ -1,14 +1,14 @@
-/system          erofs     system                                              flags=display=system;logical;slotselect;backup=1;flashimg=1
-/system          ext4      system                                              flags=display=system;logical;slotselect;backup=1;flashimg=1
-/system_dlkm     ext4      system_dlkm                                         flags=display=system_dlkm;logical;slotselect;backup=1;flashimg=1
-/vendor          erofs     vendor                                              flags=display=vendor;logical;slotselect;backup=1;flashimg=1
-/vendor_dlkm     erofs     vendor_dlkm                                         flags=display=vendor_dlkm;logical;slotselect;backup=1;flashimg=1
-/product         erofs     product                                             flags=display=product;logical;slotselect;backup=1;flashimg=1
+/system          erofs     /dev/block/dm-0                                     flags=display=system;logical;slotselect;backup=1;flashimg=1
+/system          ext4      /dev/block/dm-0                                     flags=display=system;logical;slotselect;backup=1;flashimg=1
+/system_dlkm     ext4      /dev/block/dm-4                                     flags=display=system_dlkm;logical;slotselect;backup=1;flashimg=1
+/vendor          erofs     /dev/block/dm-1                                     flags=display=vendor;logical;slotselect;backup=1;flashimg=1
+/vendor_dlkm     erofs     /dev/block/dm-3                                     flags=display=vendor_dlkm;logical;slotselect;backup=1;flashimg=1
+/product         erofs     /dev/block/dm-2                                     flags=display=product;logical;slotselect;backup=1;flashimg=1
 /data            f2fs      /dev/block/by-name/mmcblk0p29                       flags=display=data;backup=1;flashimg=1
 /metadata        ext4      /dev/block/by-name/mmcblk0p21                       flags=display=metadata;backup=1;flashimg=1
 /treadahead      ext4      /dev/block/by-name/mmcblk0p22                       flags=display=treadahead;backup=1;flashimg=1
 /oem             vfat      /dev/block/by-name/mmcblk0p26                       flags=display=oem;backup=1;flashimg=1
-/boot            emmc      /dev/block/by-name/boot                             flags=display=boot;backup=1;flashimg=1
+/boot            emmc      /dev/block/by-name/mmcblk0p5                        flags=display=boot;backup=1;flashimg=1
 /misc            emmc      /dev/block/by-name/mmcblk0p12                       flags=display=misc;backup=1;flashimg=1
 /super           emmc      /dev/block/by-name/mmcblk0p11                       flags=display=super;backup=1;flashimg=1
 /persistent      emmc      /dev/block/by-name/mmcblk0p19                       flags=display=persistent;backup=1;flashimg=1
@@ -19,80 +19,4 @@ auto             auto      /devices/platform/**/usb*                           f
 /sdcard          vfat      /dev/block/mmcblk0p1                                flags=backup=1;storage;settingsstorage;display="SDCard";wipeingui 
 /extsd           vfat      /dev/block/mmcblk1p1                                flags=backup=1;storage;display="extsd";wipeingui;removable
 /usbhost         vfat      /dev/block/sda1                                     flags=display="USB OTG";removable;storage
-
-Reserve0 -> /dev/block/mmcblk0p27
-  boot_a -> /dev/block/mmcblk0p5
-  boot_b -> /dev/block/mmcblk0p6
-  bootloader_a -> /dev/block/mmcblk0p1
-  bootloader_b -> /dev/block/mmcblk0p2
-  dtbo_a -> /dev/block/mmcblk0p24
-  dtbo_b -> /dev/block/mmcblk0p25
-  empty -> /dev/block/mmcblk0p20
-  env_a -> /dev/block/mmcblk0p3
-  env_b -> /dev/block/mmcblk0p4
-  frp -> /dev/block/mmcblk0p19
-  init_boot_a -> /dev/block/mmcblk0p9
-  init_boot_b -> /dev/block/mmcblk0p10
-  media_data -> /dev/block/mmcblk0p26
-  metadata -> /dev/block/mmcblk0p21
-  misc -> /dev/block/mmcblk0p12
-  mmcblk0 -> /dev/block/mmcblk0
-  private -> /dev/block/mmcblk0p23
-  pstore -> /dev/block/mmcblk0p28
-  super -> /dev/block/mmcblk0p11
-  treadahead -> /dev/block/mmcblk0p22
-  userdata -> /dev/block/mmcblk0p29
-  vbmeta_a -> /dev/block/mmcblk0p13
-  vbmeta_b -> /dev/block/mmcblk0p14
-  vbmeta_system_a -> /dev/block/mmcblk0p15
-  vbmeta_system_b -> /dev/block/mmcblk0p16
-  vbmeta_vendor_a -> /dev/block/mmcblk0p17
-  vbmeta_vendor_b -> /dev/block/mmcblk0p18
-  vendor_boot_a -> /dev/block/mmcblk0p7
-  vendor_boot_b -> /dev/block/mmcblk0p8
-
- by-uuid
- product_a -> /dev/block/dm-2
- system_a -> /dev/block/dm-0
- system_dlkm_a -> /dev/block/dm-4
- vendor_a -> /dev/block/dm-1
- vendor_dlkm_a -> /dev/block/dm-3
-
-
-/dev/block/mmcblk0p21 on /metadata type ext4 (rw,seclabel,nosuid,nodev,noatime,errors=panic)
-/dev/block/dm-0 on / type erofs (ro,seclabel,nodev,relatime,user_xattr,acl,cache_strategy=readaround)
-/dev/block/dm-4 on /system_dlkm type ext4 (ro,seclabel,relatime)
-/dev/block/dm-1 on /vendor type erofs (ro,seclabel,relatime,user_xattr,acl,cache_strategy=readaround)
-/dev/block/dm-3 on /vendor_dlkm type erofs (ro,seclabel,relatime,user_xattr,acl,cache_strategy=readaround)
-/dev/block/dm-2 on /product type erofs (ro,seclabel,relatime,user_xattr,acl,cache_strategy=readaround)
-/dev/block/mmcblk0p22 on /treadahead type ext4 (rw,seclabel,nosuid,nodev,noatime,errors=panic)
-/dev/block/mmcblk0p27 on /Reserve0 type vfat (rw,nosuid,nodev,noatime,fmask=0000,dmask=0000,allow_utime=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro)
-magisk on /debug_ramdisk type tmpfs (rw,seclabel,relatime,mode=755)
-devpts on /debug_ramdisk/.magisk/pts type devpts (rw,seclabel,nosuid,noexec,relatime,mode=600,ptmxmode=000)
-/dev/block/mmcblk0p26 on /oem type vfat (ro,context=u:object_r:oemfs:s0,nosuid,noatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,utf8,errors=panic)
-
-
-# Android fstab file.
-# The filesystem that contains the filesystem checker binary (typically /system) cannot
-# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
-#<src>                                                 <mnt_point>  <type>   <mnt_flags and options>      <fs_mgr_flags>
-system                                                 /system      erofs     ro                 wait,first_stage_mount,logical,slotselect
-system                                                 /system      ext4      ro,barrier=1       wait,first_stage_mount,logical,slotselect
-system_dlkm                                            /system_dlkm ext4      ro                 wait,first_stage_mount,logical,slotselect
-vendor                                                 /vendor      erofs     ro                 wait,first_stage_mount,logical,slotselect
-vendor_dlkm                                            /vendor_dlkm erofs     ro                 wait,first_stage_mount,logical,slotselect
-product                                                /product     erofs     ro                 wait,first_stage_mount,logical,slotselect
-/dev/block/by-name/userdata                            /data        f2fs     noatime,nosuid,nodev,fastboot,discard,reserve_root=128000,resuid=0,resgid=1065 wait,check,formattable,quota,reservedsize=128M,latemount,checkpoint=fs
-/dev/block/by-name/metadata                            /metadata    ext4     nodev,noatime,nosuid,errors=panic wait,first_stage_mount,formattable,check
-/dev/block/by-name/treadahead                          /treadahead  ext4     nodev,noatime,nosuid,errors=panic wait,first_stage_mount,formattable,check
-/dev/block/by-name/media_data                          /oem         vfat     ro,nodev,noatime,nosuid,context=u:object_r:oemfs:s0 wait,first_stage_mount,formattable,check
-/dev/block/by-name/boot                                /boot        emmc     defaults                     defaults
-/dev/block/by-name/misc                                /misc        emmc     defaults                     defaults
-/dev/block/by-name/super                               /super       emmc     defaults                     defaults
-/dev/block/by-name/frp                                 /persistent  emmc     defaults                     defaults
-/devices/platform/*/4020000.sdmmc/mmc_host/mmc*        auto         auto     defaults                     voldmanaged=extsd:auto,encryptable=footer
-/devices/platform/**/usb*                              auto         auto     defaults                     voldmanaged=usb:auto,encryptable=footer
-/dev/block/by-name/Reserve0                            /Reserve0    vfat     nodev,noatime,nosuid         wait,first_stage_mount,formattable,check
-# add for recovery
-none                                                   /sdcard      emmc     defaults                     defaults,recoveryonly
 
