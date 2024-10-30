@@ -110,148 +110,20 @@ VENDOR_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 16.1.0
 
 # TWRP Configuration
-# Add EXT4 support
-TARGET_USERIMAGES_USE_EXT4 := true
-
-# Disable/enable SELinux. Only suggested when you want to enable SELinux support
-TWHAVE_SELINUX := true
-
-# Remove MTP support
-TW_EXCLUDE_MTP := true
-
-# No screen timeout
-TW_NO_SCREEN_TIMEOUT := true
-
-# disables things like sdcard partitioning and may save you some space if TWRP isn't fitting in your recovery patition
-BOARD_HAS_NO_REAL_SDCARD := true
-
-# this enables proper handling of /data/media on devices that have this folder for storage (most Honeycomb and devices that originally shipped with ICS like Galaxy Nexus
-RECOVERY_SDCARD_ON_DATA := true
-
-# If your device has recovery as a second ramdisk of boot.img
-TW_HAS_NO_RECOVERY_PARTITION := true
-
-# To prevent /boot partition not found error
-TW_HAS_NO_BOOT_PARTITION := true
-
-# Removes the 'Reboot bootloader' button
-TW_NO_REBOOT_BOOTLOADER := true
-
-# Removes the 'Reboot recovery' button
-TW_NO_REBOOT_RECOVERY := true
-
-# Same as above, for CPU Temperature
-TW_NO_CPU_TEMP := true
-
-
-# Always use rm -rf to wipe
-TW_ALWAYS_RMRF := true
-
-# Prevent TWRP from unmounting /system
-TW_NEVER_UNMOUNT_SYSTEM := true
-
-# Automatically implies these:
-BOARD_HAS_NO_REAL_SDCARD := true
-TW_USE_TOOLBOX := true
-TW_EXCLUDE_SUPERSU := true
-TW_EXCLUDE_MTP := true
-TW_OEM_BUILD := true
-
-# For older devices. See here :https://github.com/omnirom/android_b...ndroid.mk#l383
-TW_NO_EXFAT_FUSE := true
-
-# Decryption support for /data
-TW_INCLUDE_CRYPTO := true
-
-
-# CPU temp sysfs path, if it is zero all the time.
-TW_CUSTOM_CPU_TEMP_PATH := true
-
-# Remove the ability to encrypt backups with a password
-TW_EXCLUDE_ENCRYPTED_BACKUPS := true
-
-# Supply a custom init.rc for the recovery
-TARGET_RECOVERY_INITRC := device/askey/adt3/recovery/init.recovery.rc
-
-# Set the default language, if not english
-TW_DEFAULT_LANGUAGE := en-US
-
-# For people who would want to have ToyBox rather than Busybox
-TW_USE_TOOLBOX := true
-
-# Remove exFAT formatting binaries
-TW_NO_EXFAT := true
-
-# Remove SuperSU and stop TWRP prompts to install it
-TW_EXCLUDE_SUPERSU := true
-
-# An awesome way to take screenshots. Back-end improvement, no noticeable user side changes. Screenshots work without it too
-TW_INCLUDE_FB2PNG := true
-
-# include Logcat daemon for help in debugging
-TWRP_INCLUDE_LOGCAT := true
-
-# See here : https://github.com/omnirom/android_b...ndroid.mk#L435
-TARGET_RECOVERY_DEVICE_MODULES := true
-
-
-# Log touch input
-TWRP_EVENT_LOGGING := true
-
-# Smartwatch optimisation
-TW_ROUND_SCREEN := true
-
-# Remove TrueType fonts
-TW_DISABLE_TTF:= true
-
-# building of an OEM friendly TWRP. excludes SuperSu, uses Toolbox instead busybox, disables themeing. MORE INFOS TO BE ADDED
-TW_OEM_BUILD := true
-
-# exclude mtp from twrp (disable if you are not able to fix it device/kernel side, safes some space)
-TW_EXCLUDE_MTP := true
-
-# screen will stay awake
-TW_NO_SCREEN_TIMEOUT := true
-
-# needed on devices without a recovery partition (some devices have recovery included im boot.img)
-TW_HAS_NO_RECOVERY_PARTITION := true
-
-# removes the reboot option to boot into boooader, needed e.g. on samsung devices which use Download mode instead
-TW_NO_REBOOT_BOOTLOADER := true
-
-# add an option in reboot menu to reboot into Download Mode
-TW_HAS_DOWNLOAD_MODE := true
-
-# some devices don't have a temp sensor, disable in such case to stop spamming recovery.log
-TW_NO_CPU_TEMP := true
-
-# recursive delete by default instead fotmatting (available optional inside recovery settings too)
-TW_ALWAYS_RMRF := true
-
-# system won't be unmounted,
-TW_NEVER_UNMOUNT_SYSTEM := true
-
-# don't blank screen (available optional inside recovery settings too)
-TW_NO_SCREEN_BLANK := true
-
-# deprecated, use TW_INCLUDE_CRYPTO instead
-TW_INCLUDE_JB_CRYPTO := true
-
-# add support for encryption
-TW_INCLUDE_CRYPTO := true
-
-
-# ToyBox (disables busybox?)
-TW_USE_TOOLBOX := true
-
-# exclude SuperSu e.g. to save some space or for different other reasons (supersu still included bx default?)
-TW_EXCLUDE_SUPERSU := true
-
-# F2FS filesystem support (make sure your kernel supports f2fs!)
-TARGET_USERIMAGES_USE_F2FS := true
-
-# device resolution - deprecated, use TW_THEME instead
-DEVICE_RESOLUTION := X96Q
+TW_LOAD_VENDOR_BOOT_MODULES := true
 TW_THEME := portrait_hdpi
-TARGET_RECOVERY_DEVICE_DIRS += device/askey/adt3
+TW_EXTRA_LANGUAGES := false
+TW_SCREEN_BLANK_ON_BOOT := true
+TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_USE_TOOLBOX := true
+TW_DEVICE_VERSION := M98
+TW_NO_SCREEN_TIMEOUT := true
+TW_EXCLUDE_TZDATA := true
+TW_EXCLUDE_NANO := true
+TW_EXCLUDE_BASH := true
+TW_EXCLUDE_PYTHON := true
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
+TW_INCLUDE_FBE_METADATA_DECRYPT := true
+TW_USE_FSCRYPT_POLICY := 2
 
