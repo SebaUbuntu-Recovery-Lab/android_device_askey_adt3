@@ -1,5 +1,5 @@
 /system          erofs     /dev/block/dm-0                                     flags=display=system;logical;slotselect;backup=1;flashimg=1
-/system          ext4      /dev/block/dm-0                                     flags=display=system;logical;slotselect;backup=1;flashimg=1
+/system          ext4      /dev/block/dm-5                                     flags=display=system;logical;slotselect;backup=1;flashimg=1
 /system_dlkm     ext4      /dev/block/dm-4                                     flags=display=system_dlkm;logical;slotselect;backup=1;flashimg=1
 /vendor          erofs     /dev/block/dm-1                                     flags=display=vendor;logical;slotselect;backup=1;flashimg=1
 /vendor_dlkm     erofs     /dev/block/dm-3                                     flags=display=vendor_dlkm;logical;slotselect;backup=1;flashimg=1
