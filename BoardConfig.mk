@@ -204,15 +204,48 @@ TWRP_INCLUDE_LOGCAT := true
 
 
 # TWRP Configuration
+TW_INCLUDE_FASTBOOTD := true
+TW_EXCLUDE_APEX := true
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+TW_EXCLUDE_TWRPAPP := true
+TW_INCLUDE_NTFS_3G := true
+TW_INCLUDE_RESETPROP := true
+TARGET_USES_MKE2FS := true
+TW_INCLUDE_REPACKTOOLS := true
+BOARD_USES_RECOVERY_AS_BOOT := true
+TARGET_NO_RECOVERY := true
+TW_HAS_NO_RECOVERY_PARTITION := true
+#TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
+TW_BRIGHTNESS_PATH := "/sys/devices/platform/soc/soc:mm/63100000.dsi/63100000.dsi.0/display/panel0/sprd_backlight/brightness"
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+TW_EXTRA_LANGUAGES := true
+TW_DEFAULT_LANGUAGE := ru
 TW_THEME := portrait_hdpi
-TW_EXTRA_LANGUAGES := false
-TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
+RECOVERY_SDCARD_ON_DATA := true
 TW_USE_TOOLBOX := true
-TW_DEVICE_VERSION := M98
-TW_NO_SCREEN_TIMEOUT := true
-TW_EXCLUDE_TZDATA := true
-TW_EXCLUDE_NANO := true
-TW_EXCLUDE_BASH := true
-TW_EXCLUDE_PYTHON := true
+TW_SCREEN_BLANK_ON_BOOT := true
+TW_NO_USB_STORAGE := true
+TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
+TW_INCLUDE_LPTOOLS := true
+TW_DEVICE_VERSION := RMX3231 by depesh1977
 
+# Decryption
+TW_INCLUDE_CRYPTO := false
+TW_INCLUDE_CRYPTO_FBE := false
+TW_INCLUDE_FBE_METADATA_DECRYPT := false
+
+# Fix fastboot reboot
+#TW_NO_FASTBOOT_BOOT := true
+
+# MTP
+TW_MTP_DEVICE := /dev/mtp_usb
+TW_HAS_MTP := true
+
+
+# Debugging
+TWRP_INCLUDE_LOGCAT := true
+TARGET_USES_LOGD := true
+
+# Kernel module loading
+#TW_LOAD_VENDOR_MODULES := "incrementalfs.ko kheaders.ko"
