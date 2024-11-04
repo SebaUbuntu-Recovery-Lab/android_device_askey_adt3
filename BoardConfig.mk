@@ -15,6 +15,7 @@
 #
 
 DEVICE_PATH := device/askey/adt3
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Architecture
 TARGET_ARCH := arm64
