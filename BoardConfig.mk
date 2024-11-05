@@ -40,7 +40,6 @@ AB_OTA_PARTITIONS += \
     system_dlkm \
     vendor \
     system
-BOARD_USES_RECOVERY_AS_BOOT := true
 
 # Power
 ENABLE_CPUSETS := true
