@@ -16,7 +16,7 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 $(call inherit-product, device/askey/adt3/device.mk)
 
 PRODUCT_DEVICE := adt3
-PRODUCT_NAME := omni_adt3
+PRODUCT_NAME := twrp_adt3
 PRODUCT_BRAND := ADT-3
 PRODUCT_MODEL := ADT-3
 PRODUCT_MANUFACTURER := askey
