@@ -32,9 +32,6 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 # Configure compression
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression.mk)
 
-# Device specific configs
-$(call inherit-product, device/xiaomi/aristotle/device.mk)
-
 # Configure virtual_ab_ota.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
