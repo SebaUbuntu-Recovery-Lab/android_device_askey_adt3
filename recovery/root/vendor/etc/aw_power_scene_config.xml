@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2022 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ -->
+
+<sceneconfigs>
+    <scene name="INTERACTIVE">
+        <set resource="cpu_governor" value="schedutil"/>
+        <set resource="dfs_governor" value="sunxi_actmon"/>
+        <set resource="io_schedule" value="mq_deadline_low_latency"/>
+        <set resource="thermal_control" value="enabled"/>
+    </scene>
+    <scene name="LAUNCH">
+        <set resource="dfs_governor" value="performance"/>
+        <set resource="cpu_governor" value="performance"/>
+        <set resource="io_schedule" value="mq_deadline_read_priority_latency"/>
+    </scene>
+    <scene name="SUSTAINED_PERFORMANCE">
+        <set resource="dfs_governor" value="performance"/>
+        <set resource="cpu_governor" value="performance"/>
+        <set resource="io_schedule" value="mq_deadline_high_batch"/>
+        <!-- <set resource="thermal_control" value="disabled"/> -->
+    </scene>
+    <scene name="GAME">
+        <set resource="dfs_governor" value="performance"/>
+        <set resource="cpu_governor" value="performance"/>
+    </scene>
+    <scene name="GAME_LOADING">
+        <set resource="dfs_governor" value="performance"/>
+        <set resource="cpu_governor" value="performance"/>
+    </scene>
+    <scene name="FIXED_PERFORMANCE">
+        <set resource="dfs_governor" value="performance"/>
+        <set resource="cpu_governor" value="performance"/>
+        <set resource="io_schedule" value="mq_deadline_high_batch"/>
+        <!-- <set resource="thermal_control" value="disabled"/> -->
+    </scene>
+    <scene name="DISPLAY_INACTIVE">
+        <set resource="tp_idle" value="idle"/>
+        <set resource="uclamp_limit" value="limit"/>
+    </scene>
+    <scene name="wifi_perf">
+        <set resource="cpu_governor" value="performance"/>
+    </scene>
+    <scene name="type_c_audio_output">
+        <set resource="dfs_governor" value="performance"/>
+    </scene>
+    <scene name="double_display_output">
+        <set resource="dfs_governor" value="performance"/>
+    </scene>
+    <scene name="camera_stream">
+        <set resource="dfs_governor" value="performance"/>
+    </scene>
+    <scene name="enable_uclamp_limit">
+        <set resource="uclamp_limit" value="limit"/>
+    </scene>
+    <scene name="booting">
+        <set resource="dfs_governor" value="performance"/>
+        <set resource="cpu_governor" value="performance"/>
+        <set resource="io_schedule" value="io_boot"/>
+        <set resource="thermal_control" value="disabled"/>
+    </scene>
+    <scene name="face_unlock">
+        <set resource="dfs_governor" value="performance"/>
+        <set resource="cpu_governor" value="performance"/>
+    </scene>
+</sceneconfigs>
