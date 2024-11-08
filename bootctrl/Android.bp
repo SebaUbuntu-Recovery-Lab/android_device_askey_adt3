@@ -15,8 +15,8 @@
 //
 
 cc_library_shared {
-    name: "android.hardware.boot@1.2-mtkimpl",
-    stem: "android.hardware.boot@1.0-impl-1.2-mtkimpl",
+    name: "android.hardware.boot@1.2-mpl",
+    stem: "android.hardware.boot@1.0-impl-1.2-impl",
     defaults: [
         "hidl_defaults",
         "libboot_control_defaults",
