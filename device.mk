@@ -95,7 +95,7 @@ PRODUCT_PACKAGES += \
 
 # Otacert
 PRODUCT_EXTRA_RECOVERY_KEYS += \
-    $(DEVICE_PATH)/security/releasekey
+    $(DEVICE_PATH)/security/releasekey.x509.pem
 
 # Hidl Service
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
