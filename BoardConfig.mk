@@ -90,7 +90,7 @@ TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 
 # Kernel
-TARGET_NO_KERNEL := false
+TARGET_NO_KERNEL := true
 # Just defining it, to avoid unncessary error while building...
 BOARD_KERNEL_IMAGE_NAME := Image
 
