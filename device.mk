@@ -24,7 +24,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     bootctrl.diana \
     libgptutils \
-    libtar \
+    libtar_intermediates \
     libz \
     libcutils
 
