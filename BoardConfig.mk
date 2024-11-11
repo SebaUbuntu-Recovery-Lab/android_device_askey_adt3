@@ -170,18 +170,29 @@ TW_INCLUDE_FASTBOOTD := true
 TARGET_USES_LOGD := true
 TWRP_INCLUDE_LOGCAT := true
 
-
-
 # TWRP Configuration
 TW_THEME := portrait_hdpi
-TW_EXTRA_LANGUAGES := false
-TW_SCREEN_BLANK_ON_BOOT := true
+TW_EXTRA_LANGUAGES := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
-TW_DEVICE_VERSION := M98
-TW_NO_SCREEN_TIMEOUT := true
-TW_EXCLUDE_TZDATA := true
-TW_EXCLUDE_NANO := true
-TW_EXCLUDE_BASH := true
-TW_EXCLUDE_PYTHON := true
+TW_INCLUDE_REPACKTOOLS := true
+TW_NO_SCREEN_BLANK := true
+TW_INCLUDE_RESETPROP := true
+TW_INCLUDE_LIBRESETPROP :=true
+TW_INCLUDE_FASTBOOTD := true
+TW_INCLUDE_TZDATA := true
+TW_EXCLUDE_APEX := true
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+TW_HAS_MTP := true
+TW_HAS_NO_RECOVERY_PARTITION := true
 
+# Vendor Boot
+# Making sure recovery build don't have kernel in it--well, no kernel at all in tree anyway... LOL!
+BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
+# We are now moving to vendor_boot, hmmm, wait, really?
+BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
+
+# Vendor Modules
+TW_LOAD_VENDOR_MODULES := true
+TW_LOAD_VENDOR_BOOT_MODULES := true
+TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
