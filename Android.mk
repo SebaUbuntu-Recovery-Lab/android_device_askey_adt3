@@ -6,6 +6,7 @@
 #
 
 LOCAL_PATH := $(call my-dir)
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 
 ifeq ($(TARGET_DEVICE),adt3)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
