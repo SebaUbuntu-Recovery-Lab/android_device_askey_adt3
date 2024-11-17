@@ -10,6 +10,17 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
+<<<<<<< HEAD
+=======
+=======
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
+
+#Inherit emulated_storage properties
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
+# Inherit userspace reboot properties
+$(call inherit-product, $(SRC_TARGET_DIR)/product/userspace_reboot.mk)
+>>>>>>> f91c6b84c99d990604c7e1ff5f779c1497bb2d5a
 
 # Inherit some common Twrp stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)

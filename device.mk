@@ -6,6 +6,7 @@
 #
 
 LOCAL_PATH := device/askey/adt3
+
 # A/B
 AB_OTA_PARTITIONS += recovery
 AB_OTA_UPDATER := true
@@ -56,7 +57,25 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += adbd.vendor_ramdisk
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f91c6b84c99d990604c7e1ff5f779c1497bb2d5a
 PRODUCT_PACKAGES += \
     linker.recovery \
     shell_and_utilities_recovery \
     adbd.recovery
+<<<<<<< HEAD
+=======
+
+# VNDK
+PRODUCT_TARGET_VNDK_VERSION := 31
+
+# API
+PRODUCT_SHIPPING_API_LEVEL := 31
+
+# Virtual A/B
+ENABLE_VIRTUAL_AB := true
+# compression.mk needs external/gflags source from aosp, as minimal-manifest of TWRP removed it. You can manually clone it, or edit the manifest itself.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression.mk)
+>>>>>>> f91c6b84c99d990604c7e1ff5f779c1497bb2d5a
