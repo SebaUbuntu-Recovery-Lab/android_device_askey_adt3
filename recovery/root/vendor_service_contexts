@@ -1,9 +1,0 @@
-softwinner.ntc u:object_r:ntc_service:s0
-vendor.display.output.IDisplayOutputManager/default u:object_r:hal_awdisplayoutput_service:s0
-background                                          u:object_r:background_service:s0
-eink                                                u:object_r:surfaceflinger_service:s0
-android.hardware.drm.IDrmFactory/widevine           u:object_r:hal_drm_service:s0
-vendor.hardware.drmheapallocator.IDrmHeapAllocator/default          u:object_r:drmheapallocator_service:s0
-softwinner.systemmix                                u:object_r:softwinner_service:s0
-aw_dragon                                 u:object_r:softwinner_service:s0
-softwinner.gpio                                     u:object_r:softwinner_service:s0
