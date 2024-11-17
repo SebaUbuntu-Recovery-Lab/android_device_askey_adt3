@@ -56,7 +56,20 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += adbd.vendor_ramdisk
 
+<<<<<<< HEAD
 PRODUCT_PACKAGES += \
     linker.recovery \
     shell_and_utilities_recovery \
     adbd.recovery
+=======
+# VNDK
+PRODUCT_TARGET_VNDK_VERSION := 31
+
+# API
+PRODUCT_SHIPPING_API_LEVEL := 31
+
+# Virtual A/B
+ENABLE_VIRTUAL_AB := true
+# compression.mk needs external/gflags source from aosp, as minimal-manifest of TWRP removed it. You can manually clone it, or edit the manifest itself.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression.mk)
+>>>>>>> e350a3acb55c4b7de34644b10a3e7fb8bf2e35f1

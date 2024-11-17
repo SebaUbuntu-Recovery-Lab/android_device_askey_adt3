@@ -157,6 +157,21 @@ BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := 
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := 
 TW_LOAD_VENDOR_BOOT_MODULES := true
+<<<<<<< HEAD
+=======
+
+# Verified Boot
+BOARD_AVB_ENABLE := true
+
+TW_INCLUDE_REPACKTOOLS := true
+
+# Fastbootd
+TW_INCLUDE_FASTBOOTD := true
+
+# Debug
+TARGET_USES_LOGD := true
+TWRP_INCLUDE_LOGCAT := true
+>>>>>>> e350a3acb55c4b7de34644b10a3e7fb8bf2e35f1
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
@@ -171,6 +186,10 @@ TARGET_USES_LOGD := true
 TWRP_INCLUDE_LOGCAT := true
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e350a3acb55c4b7de34644b10a3e7fb8bf2e35f1
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
