@@ -174,6 +174,7 @@ TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 # We are now moving to vendor_boot, hmmm, wait, really?
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
+BOARD_RAMDISK_USE_LZ4 := true
 
 # Debug
 TWRP_INCLUDE_LOGCAT := true
