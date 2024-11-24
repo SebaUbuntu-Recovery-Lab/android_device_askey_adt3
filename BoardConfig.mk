@@ -176,8 +176,6 @@ TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 # Vendor Boot
 # Making sure recovery build don't have kernel in it--well, no kernel at all in tree anyway... LOL!
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
-# We are now moving to vendor_boot, hmmm, wait, really?
-BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 BOARD_RAMDISK_USE_LZ4 := true
 
 # Debug
