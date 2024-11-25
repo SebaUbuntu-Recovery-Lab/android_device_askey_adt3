@@ -28,3 +28,4 @@ auto             auto      /devices/platform/**/usb*                           f
 /usb-otg    auto        /dev/block/sdg1 /dev/block/sdg        flags=display="USB-OTG 3";backup=0
 /usb_otg    auto        /dev/block/sdd1 /dev/block/sdd        flags=display="USB-OTG 5";backup=0
 
+# Online TWRP Builder By Team Hovatek
