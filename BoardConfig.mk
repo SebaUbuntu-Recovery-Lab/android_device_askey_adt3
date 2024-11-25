@@ -175,6 +175,7 @@ TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 
 # Vendor Boot
 BOARD_RAMDISK_USE_LZ4 := true
+MODULE_BUILD_FROM_SOURCE := true
 
 # Debug
 TWRP_INCLUDE_LOGCAT := true
