@@ -154,20 +154,9 @@ TW_EXCLUDE_APEX := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_HAS_MTP := true
 
-# Crypto
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_CRYPTO_FBE := true
-TW_PREPARE_DATA_MEDIA_EARLY := true
-
 # Debug
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
-
-
-# Vendor Modules
-TW_LOAD_VENDOR_MODULES := true
-TW_LOAD_VENDOR_BOOT_MODULES := true
-TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 
 # Version
 include $(DEVICE_PATH)/version.mk
