@@ -10,14 +10,20 @@ DEVICE_PATH := device/askey/adt3
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 
+
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
+    system \
+    vendor \
     product \
+    system_ext \
     vendor_dlkm \
     system_dlkm \
-    vendor \
-    system
+    boot \
+    vendor_boot \
+    vbmeta_vendor \
+    vbmeta_system
 BOARD_USES_RECOVERY_AS_BOOT := true
 
 # Architecture
