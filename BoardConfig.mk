@@ -169,11 +169,6 @@ TW_PREPARE_DATA_MEDIA_EARLY := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 
-# Vendor Boot
-# Making sure recovery build don't have kernel in it--well, no kernel at all in tree anyway... LOL!
-BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
-# We are now moving to vendor_boot, hmmm, wait, really?
-BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 
 # Vendor Modules
 TW_LOAD_VENDOR_MODULES := true
