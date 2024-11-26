@@ -72,3 +72,6 @@ PRODUCT_SHIPPING_API_LEVEL := 34
 # Virtual A/B
 ENABLE_VIRTUAL_AB := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch.mk)
+# compression.mk needs external/gflags source from aosp, as minimal-manifest of TWRP removed it. You can manually clone it, or edit the manifest itself.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression.mk)
+
