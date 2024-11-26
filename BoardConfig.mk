@@ -157,12 +157,6 @@ TW_EXCLUDE_APEX := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_HAS_MTP := true
 
-# Vendor Boot
-# Making sure recovery build don't have kernel in it--well, no kernel at all in tree anyway... LOL!
-BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
-# We are now moving to vendor_boot, hmmm, wait, really?
-BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
-
 # Vendor Modules
 TW_LOAD_VENDOR_MODULES := true
 TW_LOAD_VENDOR_BOOT_MODULES := true
