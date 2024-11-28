@@ -112,7 +112,6 @@ ro.boot.dynamic_partitions_retrofit=true
 ro.boot.wificountrycode=CN
 ro.frp.pst=/dev/block/by-name/frp
 ro.control_privapp_permissions=permissive
-init.userspace_reboot.is_supported=1
 ro.lmk.use_minfree_levels=false
 ro.lmk.kill_heaviest_task=false
 ro.lmk.use_new_strategy=false
