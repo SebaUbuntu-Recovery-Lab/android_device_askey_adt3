@@ -38,7 +38,7 @@ TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := Infinix-X6710
+TARGET_OTA_ASSERT_DEVICE := ASKEY-ADT3
 
 # Board Boot Header
 # Switch to version 3 since A14 update, moving recovery resources to vendor_boot
