@@ -176,3 +176,5 @@ persist.sys.set.model_name=X96QProPlus
 persist.sys.bluetooth.name=X96QProPlus
 persist.sys.led.on_off=false
 persist.sys.app.rotation=force_land
+ro.vendor.build.version.sdk=32
+ro.vendor.build.version.sdk=34
