@@ -106,9 +106,9 @@ BOARD_USES_METADATA_PARTITION := true
 
 # Partitions
 # (BOARD_PAGE_SIZE * 64)
-BOARD_FLASH_BLOCK_SIZE := 262144
-BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
-# Define vendor_boot image size, as we will be moving recovery resource to it
+BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
+BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432
+# Define vendor_boot image size, as we will we moving recovery resource to it
 BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := $(BOARD_BOOTIMAGE_PARTITION_SIZE)
 # TODO: Fix hardcoded value
 BOARD_SUPER_PARTITION_SIZE := 9126805504
