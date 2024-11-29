@@ -42,7 +42,7 @@ TARGET_OTA_ASSERT_DEVICE := ASKEY-ADT3
 
 # Board Boot Header
 # Switch to version 3 since A14 update, moving recovery resources to vendor_boot
-BOARD_BOOT_HEADER_VERSION := 4
+BOARD_BOOT_HEADER_VERSION := 3
 
 # Board Default Values
 # Switch to --vendor_cmdline since header v3
