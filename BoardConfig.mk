@@ -42,7 +42,7 @@ TARGET_OTA_ASSERT_DEVICE := ASKEY-ADT3
 
 # Board Boot Header
 # Switch to version 3 since A14 update, moving recovery resources to vendor_boot
-BOARD_BOOT_HEADER_VERSION := 3
+BOARD_BOOT_HEADER_VERSION := 4
 
 # Board Default Values
 # Switch to --vendor_cmdline since header v3
@@ -54,7 +54,7 @@ BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_RAMDISK_OFFSET := 0x03388000
 BOARD_TAGS_OFFSET := 0xfff88100
 BOARD_DTB_OFFSET := 0x03288000
-BOARD_MKBOOTIMG_ARGS += --vendor_cmdline $(BOARD_VENDOR_CMDLINE)
+#BOARD_MKBOOTIMG_ARGS += --vendor_cmdline $(BOARD_VENDOR_CMDLINE)
 BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_PAGE_SIZE) --board ""
 BOARD_MKBOOTIMG_ARGS += --kernel_offset $(BOARD_KERNEL_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
