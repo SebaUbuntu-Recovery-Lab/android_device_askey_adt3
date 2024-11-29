@@ -170,17 +170,12 @@ TW_EXTRA_LANGUAGES := false
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
-TW_DEVICE_VERSION := M98
+TW_DEVICE_VERSION := X96Qproplus
 TW_NO_SCREEN_TIMEOUT := true
 TW_EXCLUDE_TZDATA := true
 TW_EXCLUDE_NANO := true
 TW_EXCLUDE_BASH := true
 TW_EXCLUDE_PYTHON := true
-TW_INCLUDE_FASTBOOTD := true
-TW_INCLUDE_TZDATA := true
-TW_EXCLUDE_APEX := true
-TW_INCLUDE_REPACKTOOLS := true
-TW_HAS_MTP := true
 
 # Vendor Boot
 # Making sure recovery build don't have kernel in it--well, no kernel at all in tree anyway... LOL!
@@ -198,6 +193,3 @@ TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_SYSTEM_DLKM := system_dlkm
 TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext
-
-# Version
-TW_DEVICE_VERSION := A14-C_0002
