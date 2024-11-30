@@ -51,7 +51,7 @@ BOARD_BOOT_HEADER_VERSION := 3
 # Switch to --vendor_cmdline since header v3
 BOARD_VENDOR_CMDLINE := loop.max_part=4, mmcblk.perdev_minors=16, firmware_class.path=/vendor/etc/firmware, bootconfig
 # From 2048, switch to 4096 since header v3
-BOARD_PAGE_SIZE := 4036
+BOARD_PAGE_SIZE := 4096
 BOARD_KERNEL_BASE := 0x40078000
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_RAMDISK_OFFSET := 0x03388000
