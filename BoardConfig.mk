@@ -171,6 +171,14 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_INCLUDE_REPACKTOOLS := true
+TW_INCLUDE_RESETPROP := true
+TW_INCLUDE_LIBRESETPROP :=true
+TW_INCLUDE_FASTBOOTD := true
+TW_INCLUDE_TZDATA := true
+TW_EXCLUDE_APEX := true
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+TW_HAS_MTP := true
+TW_HAS_NO_RECOVERY_PARTITION := true
 
 # Vendor Boot
 # Making sure recovery build don't have kernel in it--well, no kernel at all in tree anyway... LOL!
