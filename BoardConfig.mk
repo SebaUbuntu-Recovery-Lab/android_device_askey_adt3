@@ -47,15 +47,21 @@ TARGET_OTA_ASSERT_DEVICE := ASKEY-ADT3
 # Switch to version 3 since A14 update, moving recovery resources to vendor_boot
 BOARD_BOOT_HEADER_VERSION := 3
 
-BOARD_BOOTIMG_HEADER_VERSION := 4
+# Board Default Values
+# Switch to --vendor_cmdline since header v3
+BOARD_VENDOR_CMDLINE := loop.max_part=4, mmcblk.perdev_minors=16, firmware_class.path=/vendor/etc/firmware, bootconfig
+# From 2048, switch to 4096 since header v3
+BOARD_PAGE_SIZE := 4036
 BOARD_KERNEL_BASE := 0x40078000
-BOARD_KERNEL_CMDLINE := loop.max_part=4 mmcblk.perdev_minors=16 firmware_class.path=/vendor/etc/firmware bootconfig
-BOARD_KERNEL_PAGESIZE := 2048
+BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_RAMDISK_OFFSET := 0x03388000
-BOARD_KERNEL_TAGS_OFFSET := 0xfff88100
-BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
+BOARD_TAGS_OFFSET := 0xfff88100
+BOARD_DTB_OFFSET := 0x03288000
+BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_PAGE_SIZE) --board ""
+BOARD_MKBOOTIMG_ARGS += --kernel_offset $(BOARD_KERNEL_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
-BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
+BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 
 # Board - type/size ?
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -173,8 +179,8 @@ BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 
 # Vendor Modules
-TW_LOAD_VENDOR_MODULES := true
-TW_LOAD_VENDOR_BOOT_MODULES := true
+#TW_LOAD_VENDOR_MODULES := true
+#TW_LOAD_VENDOR_BOOT_MODULES := true
 TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 
 # Workaround for copy_out error
