@@ -1,6 +1,0 @@
-# Auto-generated
-# date: Wed Jul 31 17:35:42 CST 2024
-on init
-    setprop ro.hardware.vulkan mali
-    setprop persist.graphics.egl mali
-    setprop ro.opengles.version 196610

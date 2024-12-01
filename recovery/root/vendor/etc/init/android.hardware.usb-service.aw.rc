@@ -1,4 +1,0 @@
-service vendor.usb_default /vendor/bin/hw/android.hardware.usb-service.aw
-    class hal
-    user root
-    group root system shell mtp
