@@ -1,0 +1,3 @@
+# Set btmode to AICBT_BTMODE_BT_ONLY
+on property:vendor.init.lpm.load=1
+    write /sys/devices/platform/aic-bsp/aicbsp_info/btmode 2
