@@ -1,8 +1,0 @@
-on post-fs-data
-    mkdir /data/vendor/video 0777 mediacodec root
-
-service fifo_server /vendor/bin/fifo_server_vendor
-    class main
-    disabled
-    user mediacodec
-    group root media
