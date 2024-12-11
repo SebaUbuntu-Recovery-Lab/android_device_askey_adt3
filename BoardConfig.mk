@@ -16,8 +16,15 @@ AB_OTA_PARTITIONS += \
     product \
     vendor_dlkm \
     system_dlkm \
+    system \
     vendor \
-    system
+    system_ext \
+    boot \
+    vendor_boot \
+    vbmeta_vendor \
+    vbmeta_system
+    vendor 
+    
 BOARD_USES_RECOVERY_AS_BOOT := true
 
 # Architecture
@@ -56,7 +63,7 @@ BOARD_HEADER_VERSION := 4
 BOARD_HEADER_SIZE := 2128
 BOARD_DTB_SIZE := 176040
 BOARD_DTB_OFFSET := 0x03288000
-BOARD_KERNEL_IMAGE_NAME := Image.lz4
+BOARD_RAMDISK_USE_LZ4 := true
 TARGET_KERNEL_CONFIG := adt3_defconfig
 TARGET_KERNEL_SOURCE := kernel/askey/adt3
 
@@ -84,7 +91,7 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
 BOARD_SUPER_PARTITION_SIZE := 9126805504 # TODO: Fix hardcoded value
 BOARD_SUPER_PARTITION_GROUPS := askey_dynamic_partitions
-BOARD_ASKEY_DYNAMIC_PARTITIONS_PARTITION_LIST := system system system_dlkm vendor vendor_dlkm product
+BOARD_ASKEY_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor product system_ext
 BOARD_ASKEY_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
 
 # Platform
@@ -106,6 +113,23 @@ BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
+
+# Vendor Boot
+# Making sure recovery build don't have kernel in it--well, no kernel at all in tree anyway... LOL!
+BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
+# We are now moving to vendor_boot, hmmm, wait, really?
+BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
+
+# Vendor Modules
+TW_LOAD_VENDOR_MODULES := true
+TW_LOAD_VENDOR_BOOT_MODULES := true
+TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
+
+# Workaround for copy_out error
+TARGET_COPY_OUT_VENDOR := vendor
+TARGET_COPY_OUT_SYSTEM_DLKM := system_dlkm
+TARGET_COPY_OUT_PRODUCT := product
+TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
