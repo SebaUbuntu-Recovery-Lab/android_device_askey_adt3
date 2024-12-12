@@ -16,31 +16,24 @@ AB_OTA_PARTITIONS += \
     product \
     vendor_dlkm \
     system_dlkm \
-    system \
     vendor \
-    system_ext \
-    boot \
-    vendor_boot \
-    vbmeta_vendor \
-    vbmeta_system
-    vendor 
-    
+    system
 BOARD_USES_RECOVERY_AS_BOOT := true
-
+       
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 := 
 TARGET_CPU_VARIANT := generic
-TARGET_CPU_VARIANT_RUNTIME := cortex-a55
+TARGET_CPU_VARIANT_RUNTIME := generic
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
-TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
+TARGET_2ND_CPU_VARIANT_RUNTIME := generic
 
 # APEX
 OVERRIDE_TARGET_FLATTEN_APEX := true
@@ -108,28 +101,6 @@ VENDOR_SECURITY_PATCH := 2021-08-01
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
-BOARD_AVB_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
-BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
-BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
-BOARD_AVB_RECOVERY_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
-BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
-
-# Vendor Boot
-# Making sure recovery build don't have kernel in it--well, no kernel at all in tree anyway... LOL!
-BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
-# We are now moving to vendor_boot, hmmm, wait, really?
-BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
-
-# Vendor Modules
-TW_LOAD_VENDOR_MODULES := true
-TW_LOAD_VENDOR_BOOT_MODULES := true
-TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
-
-# Workaround for copy_out error
-TARGET_COPY_OUT_VENDOR := vendor
-TARGET_COPY_OUT_SYSTEM_DLKM := system_dlkm
-TARGET_COPY_OUT_PRODUCT := product
-TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
