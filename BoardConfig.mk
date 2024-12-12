@@ -18,7 +18,7 @@ AB_OTA_PARTITIONS += \
     system_dlkm \
     vendor \
     system
-BOARD_USES_RECOVERY_AS_BOOT := false
+BOARD_USES_RECOVERY_AS_BOOT := true
        
 # Architecture
 TARGET_ARCH := arm64
@@ -114,7 +114,7 @@ TW_EXTRA_LANGUAGES := false
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
-TW_DEVICE_VERSION := DV8235
+TW_DEVICE_VERSION := X96QPROPLUS
 TW_NO_SCREEN_TIMEOUT := true
 TW_EXCLUDE_TZDATA := true
 TW_EXCLUDE_NANO := true
