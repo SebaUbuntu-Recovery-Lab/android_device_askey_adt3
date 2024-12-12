@@ -7,10 +7,20 @@
 
 DEVICE_PATH := device/askey/adt3
 
-# For building with minimal manifest
+# 1For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT :=
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
+
+# 2Debug
+TWRP_INCLUDE_LOGCAT := true
+TARGET_USES_LOGD := true
+
+# 3Crypto
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
+TW_INCLUDE_FBE_METADATA_DECRYPT := true
+TW_PREPARE_DATA_MEDIA_EARLY := true
 
 # A/B
 AB_OTA_UPDATER := true
