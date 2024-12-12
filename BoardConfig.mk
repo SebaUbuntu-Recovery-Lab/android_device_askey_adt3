@@ -38,8 +38,6 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 # 7Vendor Boot
 # Making sure recovery build don't have kernel in it--well, no kernel at all in tree anyway... LOL!
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
-# We are now moving to vendor_boot, hmmm, wait, really?
-BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 
 # 8Vendor Modules
 TW_LOAD_VENDOR_MODULES := true
