@@ -10,11 +10,11 @@ on post-fs
     symlink /dev/block/mapper/preloader_raw_a /dev/block/platform/bootdevice/by-name/preloader_raw_a
     symlink /dev/block/mapper/preloader_raw_b /dev/block/platform/bootdevice/by-name/preloader_raw_b
 
-    symlink /dev/block/mapper/preloader_raw_a /dev/block/platform/11270000.ufshci/by-name/preloader_raw_a
-    symlink /dev/block/mapper/preloader_raw_b /dev/block/platform/11270000.ufshci/by-name/preloader_raw_b
+    symlink /dev/block/mapper/preloader_raw_a /dev/block/platform/4020000.sdmmc/by-name/preloader_raw_a
+    symlink /dev/block/mapper/preloader_raw_b /dev/block/platform/4020000.sdmmc/by-name/preloader_raw_b
 
-    symlink /dev/block/mapper/preloader_raw_a /dev/block/platform/11230000.mmc/by-name/preloader_raw_a
-    symlink /dev/block/mapper/preloader_raw_b /dev/block/platform/11230000.mmc/by-name/preloader_raw_b
+    symlink /dev/block/mapper/preloader_raw_a /dev/block/platform/4020000.sdmmc/by-name/preloader_raw_a
+    symlink /dev/block/mapper/preloader_raw_b /dev/block/platform/4020000.sdmmc/by-name/preloader_raw_b
 
     symlink /dev/block/mapper/preloader_raw_a /dev/block/platform/4020000.sdmmc/by-name/preloader_raw_a
     symlink /dev/block/mapper/preloader_raw_b /dev/block/platform/4020000.sdmmc/by-name/preloader_raw_b
