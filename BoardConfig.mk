@@ -9,8 +9,7 @@ DEVICE_PATH := device/askey/adt3
 
 # 1For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
-BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT :=
-BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
+BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 
 # 2Debug
 TWRP_INCLUDE_LOGCAT := true
@@ -24,34 +23,34 @@ TW_PREPARE_DATA_MEDIA_EARLY := true
 
 # 4Metadata
 BOARD_USES_METADATA_PARTITION := true
-BOARD_SUPPRESS_SECURE_ERASE := true
 
 # 6Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
-BOARD_AVB_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
-# 7Vendor Boot
-# Making sure recovery build don't have kernel in it--well, no kernel at all in tree anyway... LOL!
-BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
-
 # 8Vendor Modules
-TW_LOAD_VENDOR_MODULES := true
 TW_LOAD_VENDOR_BOOT_MODULES := true
-TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
+BOARD_RAMDISK_USE_LZ4 := true
 
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
+    boot \
+    dtbo \
     product \
-    vendor_dlkm \
-    system_dlkm \
+    system \
+    system_ext \
+    vbmeta \
+    vbmeta_system \
+    vbmeta_vendor \
     vendor \
-    system
+    vendor_boot \
+    vendor_dlkm \
+    system_dlkm
 BOARD_USES_RECOVERY_AS_BOOT := true
        
 # Architecture
@@ -90,7 +89,7 @@ BOARD_HEADER_VERSION := 4
 BOARD_HEADER_SIZE := 2128
 BOARD_DTB_SIZE := 176040
 BOARD_DTB_OFFSET := 0x03288000
-BOARD_KERNEL_IMAGE_NAME := Image.lz4
+BOARD_KERNEL_IMAGE_NAME := kernel
 TARGET_KERNEL_CONFIG := adt3_defconfig
 TARGET_KERNEL_SOURCE := kernel/askey/adt3
 
