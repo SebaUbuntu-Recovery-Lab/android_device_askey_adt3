@@ -36,8 +36,8 @@ PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
 PRODUCT_PACKAGES += \
-    bootctrl.diana \
-    bootctrl.diana.recovery
+    create_pl_dev \
+    create_pl_dev.recovery
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
