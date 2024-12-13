@@ -5,26 +5,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-LOCAL_PATH := device/askey/adt3
-
-# Boot control HAL
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-impl.recovery \
-    android.hardware.boot@1.0-service
-
-PRODUCT_PACKAGES += \
-    bootctrl.diana \
-    bootctrl.diana.recovery
-
-
-PRODUCT_PACKAGES += \
-    libgptutils \
-    libz \
-    libcutils
-
-PRODUCT_PACKAGES += \
-    cppreopts.sh 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 33
@@ -53,8 +36,8 @@ PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
 PRODUCT_PACKAGES += \
-    create_pl_dev \
-    create_pl_dev.recovery
+    bootctrl.diana \
+    bootctrl.diana.recovery
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
