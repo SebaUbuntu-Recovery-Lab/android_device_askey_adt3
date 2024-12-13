@@ -51,6 +51,11 @@ TW_LOAD_VENDOR_BOOT_MODULES := true
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 BOARD_RAMDISK_USE_LZ4 := true
 
+# Properties
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/properties/system.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/properties/vendor.prop
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
+
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
