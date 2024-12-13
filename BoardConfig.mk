@@ -9,7 +9,6 @@ DEVICE_PATH := device/askey/adt3
 
 # 1For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
-BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 
 # 2Debug
 TWRP_INCLUDE_LOGCAT := true
