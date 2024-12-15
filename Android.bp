@@ -1,15 +1,9 @@
 //
-// Copyright (C) 2024 The Android Open Source Project
-// Copyright (C) 2024 SebaUbuntu's TWRP device tree generator
+// Copyright (C) 2023 The Android Open Source Project
+// Copyright (C) 2023 SebaUbuntu's TWRP device tree generator
 //
 // SPDX-License-Identifier: Apache-2.0
 //
 
-cc_library_shared {
-    name: "android.security.apc-ndk_platform",
-    srcs: ["path/to/source/file.c"],
-    shared_libs: [
-        // Other dependencies
-    ],
-    stl: "c++_shared",
+soong_namespace {
 }
