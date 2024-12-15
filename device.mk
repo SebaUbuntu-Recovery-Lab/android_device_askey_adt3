@@ -52,6 +52,12 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl-mock \
     fastbootd
 
+PRODUCT_PACKAGES += \
+    bootctrl.diana \
+    libgptutils \
+    libz \
+    libcutils
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
