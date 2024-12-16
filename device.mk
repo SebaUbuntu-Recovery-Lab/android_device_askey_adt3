@@ -21,6 +21,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     bootctrl.diana
 
+PRODUCT_PACKAGES += libbootctrl_diana
+
+
 PRODUCT_PACKAGES += \
     bootctrl.diana \
     libgptutils \
