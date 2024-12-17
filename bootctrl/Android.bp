@@ -1,0 +1,20 @@
+cc_library_shared {
+    name: "libbootctrl_diana",
+    srcs: [
+        "BootControl.cpp",
+    ],
+    shared_libs: [
+        "liblog",
+        "libbase",
+        "libcutils",
+    ],
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-DAB_SLOT_SUPPORT",
+    ],
+    relative_install_path: "hw",
+    proprietary: true,
+    // Если include не используется, можно удалить строку с export_include_dirs
+    // export_include_dirs: ["include"], 
+}
