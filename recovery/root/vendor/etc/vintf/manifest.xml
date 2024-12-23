@@ -1,0 +1,42 @@
+<!--
+    Input:
+        device/softwinner/diana/common/camera/external_camera_manifest.xml
+        device/softwinner/diana/common/system/manifest.xml
+        device/softwinner/common/config/wireless/manifest/manifest_bluetooth.xml
+-->
+<manifest version="7.0" type="device" target-level="7">
+    <hal format="hidl">
+        <name>android.hardware.audio</name>
+        <transport>hwbinder</transport>
+        <fqname>@7.1::IDevicesFactory/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.audio.effect</name>
+        <transport>hwbinder</transport>
+        <fqname>@7.0::IEffectsFactory/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.bluetooth</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IBluetoothHci/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.camera.provider</name>
+        <transport>hwbinder</transport>
+        <fqname>@2.4::ICameraProvider/external/0</fqname>
+        <fqname>@2.4::ICameraProvider/legacy/0</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.graphics.allocator</name>
+        <transport>hwbinder</transport>
+        <fqname>@2.0::IAllocator/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.graphics.mapper</name>
+        <transport arch="32+64">passthrough</transport>
+        <fqname>@2.1::IMapper/default</fqname>
+    </hal>
+    <sepolicy>
+        <version>34.0</version>
+    </sepolicy>
+</manifest>

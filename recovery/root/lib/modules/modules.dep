@@ -1,0 +1,63 @@
+/lib/modules/fb.ko:
+/lib/modules/sunxi-dma.ko:
+/lib/modules/bmu-ext-core.ko:
+/lib/modules/pmu-ext-regulator.ko:
+/lib/modules/ccu-sun55iw3-mcu.ko: /lib/modules/ccu-sunxi-ng.ko
+/lib/modules/ccu-sun55iw3-displl.ko: /lib/modules/ccu-sunxi-ng.ko
+/lib/modules/cma_heap.ko:
+/lib/modules/sunxi-sid.ko: /lib/modules/sunxi-smc.ko
+/lib/modules/ccu-sun55iw3.ko: /lib/modules/ccu-sunxi-ng.ko
+/lib/modules/sunxi-uart.ko:
+/lib/modules/pinctrl-sun55iw3.ko: /lib/modules/pinctrl-sunxi.ko
+/lib/modules/pmu-ext-i2c.ko: /lib/modules/pmu-ext-core.ko
+/lib/modules/sunxi-smc.ko:
+/lib/modules/disp.ko: /lib/modules/sunxi-iommu.ko /lib/modules/fb.ko /lib/modules/sunxi-sid.ko /lib/modules/sunxi-smc.ko
+/lib/modules/pinctrl-sun55iw3-r.ko: /lib/modules/pinctrl-sunxi.ko
+/lib/modules/sunxi_npd.ko:
+/lib/modules/sunxi-iommu.ko:
+/lib/modules/axp2202_usb_power.ko:
+/lib/modules/pwm-sunxi.ko:
+/lib/modules/sunxi_ac_virtual_power.ko:
+/lib/modules/pm_domains.ko:
+/lib/modules/sunxi-dump.ko: /lib/modules/disp.ko /lib/modules/sunxi-iommu.ko /lib/modules/fb.ko /lib/modules/sunxi-sid.ko /lib/modules/sunxi-smc.ko
+/lib/modules/bootevent.ko:
+/lib/modules/tee.ko:
+/lib/modules/bmu-ext-i2c.ko: /lib/modules/bmu-ext-core.ko
+/lib/modules/sunxi_nsi.ko:
+/lib/modules/sunxi_thermal.ko: /lib/modules/sunxi-sid.ko /lib/modules/sunxi-smc.ko
+/lib/modules/sunxi-vendor-hooks.ko:
+/lib/modules/pmu-ext-core.ko:
+/lib/modules/optee.ko: /lib/modules/tee.ko
+/lib/modules/rtc-sunxi.ko:
+/lib/modules/ccu-sun55iw3-rtc.ko: /lib/modules/ccu-sunxi-ng.ko
+/lib/modules/sunxi_addr.ko: /lib/modules/sunxi-sid.ko /lib/modules/sunxi-smc.ko
+/lib/modules/sunxi_mm.ko:
+/lib/modules/sunxi-dsufreq.ko: /lib/modules/sun50i-cpufreq-nvmem.ko /lib/modules/cpufreq-dt.ko /lib/modules/sunxi-dump.ko /lib/modules/disp.ko /lib/modules/sunxi-iommu.ko /lib/modules/fb.ko /lib/modules/sunxi-sid.ko /lib/modules/sunxi-smc.ko
+/lib/modules/timer-sun50i.ko:
+/lib/modules/axp2101.ko:
+/lib/modules/axp2202_battery.ko: /lib/modules/axp2101.ko
+/lib/modules/sunxi_pd_test.ko:
+/lib/modules/zsmalloc.ko:
+/lib/modules/cpufreq-dt.ko: /lib/modules/sunxi-dump.ko /lib/modules/disp.ko /lib/modules/sunxi-iommu.ko /lib/modules/fb.ko /lib/modules/sunxi-sid.ko /lib/modules/sunxi-smc.ko
+/lib/modules/cfg80211.ko:
+/lib/modules/system_heap.ko:
+/lib/modules/pck600_domains.ko:
+/lib/modules/mmc_hsq.ko:
+/lib/modules/axp2101-regulator.ko:
+/lib/modules/irq-sun8i-nmi.ko:
+/lib/modules/twi-sunxi.ko:
+/lib/modules/bmu-ext-regulator.ko:
+/lib/modules/irq-sunxi-wakeupgen.ko:
+/lib/modules/cqhci.ko: /lib/modules/sunxi-sid.ko /lib/modules/sunxi-smc.ko
+/lib/modules/axp2101-pek.ko:
+/lib/modules/sun50i-cpufreq-nvmem.ko: /lib/modules/sunxi-sid.ko /lib/modules/sunxi-smc.ko
+/lib/modules/ccu-sun55iw3-r.ko: /lib/modules/ccu-sunxi-ng.ko
+/lib/modules/nvmem_sunxi_sid.ko:
+/lib/modules/dump_reg.ko:
+/lib/modules/ccu-sunxi-ng.ko:
+/lib/modules/zram.ko: /lib/modules/zsmalloc.ko
+/lib/modules/axp2101-i2c.ko: /lib/modules/axp2101.ko
+/lib/modules/sunxi_mmc_host.ko: /lib/modules/cqhci.ko /lib/modules/mmc_hsq.ko /lib/modules/sunxi-sid.ko /lib/modules/sunxi-smc.ko
+/lib/modules/i2c-dev.ko:
+/lib/modules/mac80211.ko: /lib/modules/cfg80211.ko
+/lib/modules/pinctrl-sunxi.ko:
