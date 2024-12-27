@@ -6,26 +6,28 @@
 #
 
 LOCAL_PATH := device/askey/adt3
-# A/B
-AB_OTA_POSTINSTALL_CONFIG += \
-    RUN_POSTINSTALL_system=true \
-    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    FILESYSTEM_TYPE_system=ext4 \
-    POSTINSTALL_OPTIONAL_system=true
+#
+#
+# Enable updating of APEXes
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
-# Boot control HAL
+# Health
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-service
+    android.hardware.health@2.1-impl \
+    android.hardware.health@2.1-service
+
+# API level
+PRODUCT_SHIPPING_API_LEVEL := 34
+
+# VNDK
+#PRODUCT_TARGET_VNDK_VERSION := current
+
+# Enable developer GSI keys
+#$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
 PRODUCT_PACKAGES += \
-    bootctrl.diana
-
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.diana \
-    libgptutils \
-    libz \
-    libcutils
+    android.hardware.fastboot@1.1-impl-mock \
+    fastbootd 
 
 PRODUCT_PACKAGES += \
     otapreopt_script \
@@ -33,3 +35,38 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_verifier \
     update_engine_sideload
+
+# Health HAL
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.1-service \
+    android.hardware.health@2.1-impl
+
+# Boot Control HAL
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.1-impl 
+
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-service
+
+# Partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+PRODUCT_PACKAGES_DEBUG += \
+    update_engine_client
+
+# Recovery additional binaries
+TARGET_RECOVERY_DEVICE_MODULES += \
+    libion \
+    libxml2
+
+RECOVERY_LIBRARY_SOURCE_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
+
+# Additional Libraries
+TARGET_RECOVERY_DEVICE_MODULES += \
+    libkeymaster4 \
+    libpuresoftkeymasterdevice
